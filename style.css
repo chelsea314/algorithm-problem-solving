@@ -1,5 +1,5 @@
 body {
-    background-color: #F8FAF0;
+    background-color: #BACDCB;
 }
 .cs-header {
     background-color: #5D6B86;
@@ -18,3 +18,9 @@ body {
     background-color: #BACDCB;
 }
 
+.inline-math {
+    font-family:'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: 25px;
+}
+/* <span class="inline-math"></span> */

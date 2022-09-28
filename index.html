@@ -27,7 +27,7 @@
             <card class="card col-12 problem"> 
                 <div class="card-body">
                     <h5 class="card-title">Problem:</h5>
-                    <p>This is a staircase of size (n = 4):</p>
+                    <p>This is a staircase of size <span class="inline-math">n = 4</span>:</p>
                     <pre>
                         <code class="col-6">
    #
@@ -37,9 +37,9 @@
                         </code>
                     </pre>  
                     
-                    <p>Its base and height are both equal to (n). It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+                    <p>Its base and height are both equal to <span class="inline-math">n</span>. It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
                      
-                     Write a program that prints a staircase of size (n).</p>
+                     Write a program that prints a staircase of size <span class="inline-math">n</span>.</p>
 
                 </div>
             </card>
@@ -61,7 +61,7 @@ function staircase(n) {
         </div>
 
         <div class="row">
-            <h2 class="col-12 mt-2">The Staircase</h2>
+            <h2 class="col-12 mt-2">Plus Minus</h2>
             <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
         </div>
 
@@ -69,33 +69,67 @@ function staircase(n) {
             <card class="card col-12 problem"> 
                 <div class="card-body">
                     <h5 class="card-title">Problem:</h5>
-                    <p>This is a staircase of size (n = 4):</p>
+                    <p>Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with <span class="inline-math">6</span> places after the decimal.</p>
+
+                    <p>Print the ratios of positive, negative and zero values in the array. Each value should be printed on a separate line with <span class="inline-math">6</span> digits after the decimal. The function should not return a value.</p>
+
+                    <h6>Input Format</h6>
+
+                    <p>The first line contains an integer, <span class="inline-math">n</span>, the size of the array.</p>
+                    <p>The second line contains <span class="inline-math">n</span> space-separated integers that describe <span class="inline-math">arr[n]</span>.</p>
+
+                    <h6>Sample Input</h6>
                     <pre>
                         <code class="col-6">
-   #
-  ##
- ###
-####
+STDIN           Function
+-----           --------
+6               arr[] size n = 6
+-4 3 -9 0 4 1   arr = [-4, 3, -9, 0, 4, 1]
                         </code>
-                    </pre>  
-                    
-                    <p>Its base and height are both equal to (n). It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
-                     
-                     Write a program that prints a staircase of size (n).</p>
+                    </pre> 
 
+                    <h6>Sample Output</h6>
+                    <pre>
+                        <code class="col-6">
+0.500000
+0.333333
+0.166667
+                        </code>
+                    </pre> 
+
+                    <h6>Explanation</h6>
+                    <p>There are <span class="inline-math">3</span> positive numbers, <span class="inline-math">2</span> negative numbers, and <span class="inline-math">1</span> zero in the array.
+                        The proportions of occurrence are positive: <span class="inline-math">(3/6) = 0.500000</span>, negative: <span class="inline-math">(2/6) = 0.333333</span> and zeros: <span class="inline-math">(1/6) = 0.166667</span>.</p>
                 </div>
             </card>
         </div>
+
         <div class="row">
             <card class="card col-12 solution mt-2"> 
                 <div class="card-body">
                     <h5 class="card-title">My Solution:</h5>
                     <pre>
-                        <code class="col-6">
-function staircase(n) {
-    for (let i = 1; i <= n; i++){
-        console.log((' '.repeat(n-i)) + '#'.repeat(i));
-    };
+                        <code class="col-6">                
+function plusMinus(arr) {
+    let positive = 0;
+    let negative = 0;
+    let zero = 0;
+    let n = arr.length;
+    
+    for (let i = 0; i < n; i++){
+        if (arr[i] < 0) {
+            negative ++;
+        } else if (arr[i] > 0) {
+            positive ++;
+        } else if (arr[i] === 0) { 
+            zero ++;
+        } 
+    }; 
+
+    console.log((positive/n).toFixed(6));
+    console.log((negative/n).toFixed(6));
+    console.log((zero/n).toFixed(6));
+};
                         </code>
                     </pre>        
                 </div>
@@ -108,7 +142,7 @@ function staircase(n) {
     </div>
 
     <footer class="footer">
-        <h3>footer</h3>
+        <h3>Chelsea Sexton</h3>
     </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
