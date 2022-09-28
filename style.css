@@ -1,0 +1,20 @@
+body {
+    background-color: #F8FAF0;
+}
+.cs-header {
+    background-color: #5D6B86;
+    color: #F8FAF0;
+}
+
+.problem {
+    border: 2px solid #FDBF4A;
+}
+
+.solution {
+    border: 2px solid #5D6B86;
+}
+
+.footer {
+    background-color: #BACDCB;
+}
+
