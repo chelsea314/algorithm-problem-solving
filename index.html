@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorithm Problem Solving Practice</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css"
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -18,6 +18,8 @@
       </div>
 
     <div class="container">
+
+<!-- ///////////////////////////////////////////////////////////// -->
 
         <div class="row">
             <h2 class="col-12 mt-2">Mini Max</h2>
@@ -73,6 +75,8 @@ function miniMaxSum(arr) {
             </card>
         </div>
 
+<!-- ///////////////////////////////////////////////////////////// -->
+
         <div class="row">
             <h2 class="col-12 mt-2">The Staircase</h2>
             <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
@@ -114,6 +118,8 @@ function staircase(n) {
                 </div>
             </card>
         </div>
+
+<!-- ///////////////////////////////////////////////////////////// -->
 
         <div class="row">
             <h2 class="col-12 mt-2">Plus Minus</h2>
@@ -194,6 +200,84 @@ function plusMinus(arr) {
             </card>
         </div>
 
+<!-- ///////////////////////////////////////////////////////////// -->
+
+<div class="row">
+    <h2 class="col-12 mt-2">Compare the Triplets</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>Alice and Bob each created one problem for HackerRank. A reviewer rates the two challenges, awarding points on a scale from 1 to 100 for three categories: problem clarity, originality, and difficulty.
+
+            <p>The rating for Alice's challenge is the triplet a = (a[0], a[1], a[2]), and the rating for Bob's challenge is the triplet b = (b[0], b[1], b[2]).</p>
+                
+            <p>The task is to find their comparison points by comparing a[0] with b[0], a[1] with b[1], and a[2] with b[2].</p>
+            
+            <ul>
+                <li>If a[i] > b[i], then Alice is awarded 1 point.</li>
+                <li>If a[i] < b[i], then Bob is awarded 1 point.</li>
+                <li>If a[i] = b[i], then neither person receives a point.</li>
+            </ul>
+            
+            <p>Comparison points is the total points a person earned.</p>
+                
+            <p>Given a and b, determine their respective comparison points.</p>
+                
+            <h6>Example</h6>
+                
+            <p>a = [1, 2, 3]</p>
+            <p>b = [3, 2, 1]</p>
+            <ul>
+                <li>For elements *0*, Bob is awarded a point because a[0].</li>
+                <li>For the equal elements a[1] and b[1], no points are earned.</li>
+                <li>Finally, for elements 2, a[2] > b[2] so Alice receives a point.</li>
+            </ul>
+                
+            <p>The return array is [1, 1] with Alice's score first and Bob's second.</p>
+
+            <h6>Sample Input</h6>
+            <pre>
+                <code class="col-6">
+5 6 7
+3 6 10
+                </code>
+            </pre> 
+
+            <h6>Sample Output</h6>
+            <pre>
+                <code class="col-6">
+1 1
+                </code>
+            </pre> 
+        </div>
+    </card>
+</div>
+
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">                
+function compareTriplets(a, b) {
+    let score = [0, 0];
+    for (let i =0; i< a.length; i++)
+    if (a[i] > b[i]){
+        score[0] ++
+    } else if (a[i] < b[i]){
+        score[1] ++
+        }; 
+    return score;
+}
+                </code>
+            </pre>        
+        </div>
+    </card>
+</div>
 
 
 
