@@ -20,7 +20,69 @@
     <div class="container">
 
 <!-- ///////////////////////////////////////////////////////////// -->
+<!-- soultion for Between Two Sets -->
+<pre>
+    <code>
+function getTotalX(a, b) {
+    // console.log("a:", a)
+    // console.log("b:", b)
+    let rangeArr = [];
+    let maxA = Math.max(...a);
+    let counter = 0
 
+    for (let i = 1; i <= 100; i ++) {
+        let r = maxA * i;
+        rangeArr.push(r);
+        if (r === b[0]) {
+            // console.log("1st rangeArr:", rangeArr)
+            { break }
+        } 
+    }
+    
+    for (let k = 0; k < rangeArr.length; k++) {
+        // console.log("2nd rangeArr:", rangeArr);
+        // console.log("b:", b);
+        
+        for (let j = 0; j < b.length; j++){
+            // console.log("3rd b[j]", b[j])
+            // console.log("rangeArr[k]", rangeArr[k])
+            let remainder = b[j] % rangeArr[k]
+            // console.log("remainder:", remainder)
+            
+            if (remainder !== 0) {
+                // console.log("NO");
+                // console.log("k:", k)
+                rangeArr.splice(k, 1, 0)
+                // console.log("if3rd-rangeArr:", rangeArr)
+                { break }
+            } 
+        } 
+        for (let g = 0; g < a.length; g++){
+            // console.log("4th starting a loop remainders")
+            // console.log("rangeArr[k]", rangeArr[k]);
+            // console.log("a[g]", a[g]);
+            let remainder = rangeArr[k] % a[g];
+            // console.log("remainder:", remainder);
+            
+            if (remainder !== 0) {
+                // console.log("NO");
+                // console.log("g:", g)
+                rangeArr.splice(k, 1, 0)
+                // console.log("if4th-rangeArr:", rangeArr)
+                { break }
+            } 
+        }
+    } 
+    
+    for (let t= 0; t < rangeArr.length; t++) {
+            if (rangeArr[t] !== 0) {
+                // console.log("counter:", counter)
+                counter++;
+            }
+        } return counter;
+}
+    </code>
+</pre>
         <div class="row">
             <h2 class="col-12 mt-2">Mini Max</h2>
             <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
