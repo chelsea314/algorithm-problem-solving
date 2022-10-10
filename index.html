@@ -18,7 +18,48 @@
       </div>
 
     <div class="container">
-
+<!-- ///////////////////////////////////////////////////////////// -->
+<!-- soultion for Subarray Division -->
+<pre>
+    <code>
+        function birthday(s, d, m) {
+            console.log("s:", s);
+            console.log("d:", d);
+            console.log("m:", m);
+            
+            function reducer(previousValue, currentValue, index) {
+                const returns = previousValue + currentValue;
+                
+                console.log(
+                    `previousValue: ${previousValue}, 
+                    currentValue: ${currentValue}, 
+                    index: ${index}, returns: ${returns}`,
+                );
+                
+                return returns;
+            }
+            
+            let count = 0;
+        
+            for (let i = 0; i < s.length; i++) {
+                let removed = s.slice(i, (i+m))
+                
+                console.log("removed:", removed);
+                console.log("s:", s);
+                let sum = removed.reduce(reducer);
+                console.log("sum:", sum);
+                console.log("i", i);
+                
+                if (sum === d) {
+                    count++
+                }
+                console.log("count:", count);
+            } return count;
+        }
+        
+    </code>
+</pre>
+ 
 <!-- ///////////////////////////////////////////////////////////// -->
 <!-- soultion for Between Two Sets -->
 <pre>
