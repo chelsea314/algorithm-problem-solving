@@ -849,9 +849,130 @@ function getTotalX(a, b) {
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
 
 <!-- INLINE-MATH TEMPLATE -->
-<!-- <span class="inline-math"></span> -->
+<span class="inline-math"></span>
 <!-- ///////////////////////////// -->
 
+<div class="row">
+    <h2 class="col-12 mt-2">Time Conversion</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 3, 2022</h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+            </p>
+            <p>
+                Note: 
+            </p>
+            <ul>
+                <li>
+                    12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+                </li>
+                <li>
+                    12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+                </li>
+            </ul>
+            <h6>
+                Example
+            </h6>
+            <ul>
+                <li><span class="inline-math">s = '12:01:00PM'</span></li>
+            </ul>
+            <p>
+                Return '12:01:00'.
+            </p>
+            <ul>
+                <li><span class="inline-math">s = '12:01:00AM'</span></li>
+            </ul>
+            <p>
+                Return '00:01:00'.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the timeConversion function in the editor below. It should return a new string representing the input time in 24 hour format.
+            </p>
+            <p>
+                timeConversion has the following parameter(s):
+            </p>
+            <ul>
+                <li>
+                    string s: a time in <span class="inline-math">12</span> hour format
+                </li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>
+                    string: the time in <span class="inline-math">24</span> hour format
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                A single string <span class="inline-math">s</span> that represents a time in <span class="inline-math">12</span>-hour clock format (i.e.: <span class="inline-math">hh:mm:ssAM</span> or <span class="inline-math">hh:mm:ssPM</span>).
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    All input times are valid
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <p>
+                <span class="inline-math">07:05:45PM</span> 
+            </p>
+            <h6>
+                Sample Output
+            </h6>
+            <p>
+                <span class="inline-math">19:05:45</span> 
+            </p>         
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function timeConversion(s) {
+    let hh = s.slice(0, 2);
+    let intHH = parseInt(hh);
+    let ampm = s.slice(8);
+    let militaryTime = '';
+    if ((ampm === 'PM' && hh === '12') || (ampm === 'AM' && hh !== '12')) {
+        militaryTime = s.slice(0, 8);
+    }
+    else if (ampm === 'AM' && hh === '12') {
+        militaryTime = s.replace('12', '00').slice(0, 8);
+    }
+    else if (ampm === 'PM' && hh !== '12') {
+        intHH += 12;
+        let updatedTime = s.replace(hh, intHH);
+        militaryTime = updatedTime.slice(0, 8)
+    } return militaryTime
+}
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+<!-- END ///////////////////////////////////////////////////////////// -->
+
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
 <div class="row">
     <h2 class="col-12 mt-2">Birthday Cake Candles</h2>
     <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
@@ -964,7 +1085,6 @@ function birthdayCakeCandles(candles) {
         </div>
     </card>
 </div>
-
 <!-- END ///////////////////////////////////////////////////////////// -->
 
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
