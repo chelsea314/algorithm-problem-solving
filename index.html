@@ -853,6 +853,173 @@ function getTotalX(a, b) {
 <!-- ///////////////////////////// -->
 
 <div class="row">
+    <h2 class="col-12 mt-2">Grading Students</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 3, 2022</h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                HackerLand University has the following grading policy:
+            </p>
+            <ul>
+                <li>
+                    Every student receives a <span class="inline-math">grade</span> in the inclusive range from <span class="inline-math">0</span> to <span class="inline-math">100</span>.
+                </li>
+                <li>
+                    Any <span class="inline-math">grade</span> less than <span class="inline-math">40</span> is a failing grade.
+                </li>
+            </ul>
+            <p>
+                Sam is a professor at the university and likes to round each student's <span class="inline-math">grade</span> according to these rules:
+            </p>
+            <ul>
+                <li>
+                    If the difference between the <span class="inline-math">grade</span> and the next multiple of <span class="inline-math">5</span> is less than <span class="inline-math">3</span>, round <span class="inline-math">grade</span> up to the next multiple of <span class="inline-math">5</span>.
+                </li>
+                <li>
+                    If the value of <span class="inline-math">grade</span> is less than <span class="inline-math">38</span>, no rounding occurs as the result will still be a failing grade.
+                </li>
+            </ul>
+            <h6>
+                Example
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">grade = 84</span> round to <span class="inline-math">85</span> (85 - 84 is less than 3)
+                </li>
+                <li>
+                    <span class="inline-math">grade = 29</span> do not round (result is less than 40)
+                </li>
+                <li>
+                    <span class="inline-math">grade = 57</span> do not round (60 - 57 is 3 or higher)
+                </li>
+            </ul>
+            <p>
+                Given the initial value of <span class="inline-math">grade</span> for each of Sam's <span class="inline-math">n</span> students, write code to automate the rounding process.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the function gradingStudents in the editor below.
+            </p>
+            <p>
+                gradingStudents has the following parameter(s):
+            </p>
+            <ul>
+                <li>
+                    int grades[n]: the grades before rounding
+                </li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>
+                    int[n]: the grades after rounding as appropriate
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line contains a single integer, <span class="inline-math">n</span>, the number of students.
+            </p>
+            <p>
+                Each line <span class="inline-math">i</span> of the <span class="inline-math">n</span> subsequent lines contains a single integer, <span class="inline-math">grades[i]</span>.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">1 <= n <= 60</span>
+                </li>
+                <li>
+                    <span class="inline-math">0 <= grades[i] <= 100</span>
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <p>
+                <span class="inline-math">4</span>
+                <br>
+                <span class="inline-math">73</span>
+                <br>
+                <span class="inline-math">67</span>
+                <br>
+                <span class="inline-math">38</span>
+                <br>
+                <span class="inline-math">33</span>
+            </p>
+            <h6>
+                Sample Output
+            </h6>
+            <p>
+                <span class="inline-math">75</span>
+                <br>
+                <span class="inline-math">67</span>
+                <br>
+                <span class="inline-math">40</span>
+                <br>
+                <span class="inline-math">33</span>
+            </p>
+            <h6>
+                Explanation
+            </h6>
+            <img src="./images/gradingstudents.png" alt="results table">
+            <ol>
+                <li>
+                    Student <span class="inline-math">1</span> received a <span class="inline-math">73</span>, and the next multiple of <span class="inline-math">5</span> from <span class="inline-math">73</span> is <span class="inline-math">75</span>. Since <span class="inline-math">75 - 73 < 3</span>, the student's grade is rounded to <span class="inline-math">75</span>.
+                </li>
+                <li>
+                    Student <span class="inline-math">2</span> received a <span class="inline-math">67</span>, and the next multiple of <span class="inline-math">5</span> from <span class="inline-math">67</span> is <span class="inline-math">70</span>. Since <span class="inline-math">70 - 67 = 3</span>, the grade will not be modified and the student's final grade is <span class="inline-math">67</span>.
+                </li>
+                <li>
+                    Student <span class="inline-math">3</span> received a <span class="inline-math">38</span>, and the next multiple of <span class="inline-math">5</span> from <span class="inline-math">38</span> is <span class="inline-math">40</span>. Since <span class="inline-math">40 - 38 < 3</span>, the student's grade will be rounded to <span class="inline-math">40</span>.
+                </li>
+                <li>
+                    Student <span class="inline-math">4</span> received a grade below <span class="inline-math">33</span>, so the grade will not be modified and the student's final grade is <span class="inline-math">33</span>.
+                </li>
+            </ol>            
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function gradingStudents(grades) {
+    let finalGrades = [];
+    let n = grades.length;
+    
+    for (let i = 0; i < n; i++) {
+        let roundUp = Math.ceil(grades[i]/5)*5;
+
+        if ((grades[i] < 38) || (grades[i] >= 38 && ((roundUp - grades[i]) >= 3))) {
+            finalGrades.push(grades[i]);
+        } else if (grades[i] >= 38 && ((roundUp - grades[i]) < 3)) {
+            finalGrades.push(roundUp);
+        } 
+    } return finalGrades
+}
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
+
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+<div class="row">
     <h2 class="col-12 mt-2">Time Conversion</h2>
     <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
     <h5 class="col-12">Date Solved: Oct. 3, 2022</h5>
