@@ -230,6 +230,7 @@ function migratoryBirds(arr) {
 </div>
 
 <!-- END ///////////////////////////////////////////////////////////// -->
+
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
 <div class="row">
     <h2 class="col-12 mt-2">Divisible Sum Pairs</h2>
@@ -381,12 +382,99 @@ function birthday(s, d, m) {
 <!-- END ///////////////////////////////////////////////////////////// -->
 
 <!-- ///////////////////////////////////////////////////////////// -->
-<!-- soultion for Between Two Sets -->
-<pre>
-    <code>
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+<div class="row">
+    <h2 class="col-12 mt-2">Between Two Sets</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 5, 2022</h5>
+</div>
+    
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            
+            <span class="inline-math"></span>
+
+            <p>
+                There will be two arrays of integers. Determine all integers that satisfy the following two conditions:
+            </p>
+            <ol>
+                <li>The elements of the first array are all factors of the integer being considered</li>
+                <li>The integer being considered is a factor of all elements of the second array</li>
+            </ol>
+            <p>
+                These numbers are referred to as being between the two arrays. Determine how many such numbers exist.
+            </p>
+            <h6>    
+                Example
+            </h6>
+            <p>
+                <span class="inline-math">a = [2, 6]</span>
+            </p>
+            <p>
+                <span class="inline-math">b = [24, 36]</span>
+            </p>
+            <p>
+                There are two numbers between the arrays: <span class="inline-math">6</span> and <span class="inline-math">12</span>.
+            </p>
+            <p>
+                <span class="inline-math">6%2=0</span>, <span class="inline-math">6%6=0</span>, <span class="inline-math">24%6=0</span> and <span class="inline-math">36%6=0</span> for the first value.
+            </p>
+            <p>    
+                <span class="inline-math">12%2=0</span>, <span class="inline-math">12%6=0</span> and <span class="inline-math">24%12=0</span>, <span class="inline-math">36%12=0</span> for the second value. Return <span class="inline-math">2</span>.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the getTotalX function in the editor below. It should return the number of integers that are betwen the sets.
+            </p>
+            <p>
+                getTotalX has the following parameter(s):
+            </p>
+            <ul>
+                <li>int a[n]: an array of integers</li>
+                <li>int b[m]: an array of integers</li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>int: the number of integers that are between the sets</li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line contains two space-separated integers, <span class="inline-math">n</span> and <span class="inline-math">m</span>, the number of elements in arrays <span class="inline-math">a</span> and <span class="inline-math">b</span>.
+            </p>
+            <p>
+                The second line contains <span class="inline-math">n</span> distinct space-separated integers <span class="inline-math">a[i]</span> where <span class="inline-math">0 <= i < n</span>.
+            </p>
+            <p>
+                The third line contains <span class="inline-math">m</span> distinct space-separated integers <span class="inline-math">b[j]</span> where <span class="inline-math">0 <= j < m</span>.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li><span class="inline-math">1 <= n, m <= 10</span></li>
+                <li><span class="inline-math">1 <= a[i] <= 100</span></li>
+                <li><span class="inline-math">1 <= b[j] <= 100</span></li>
+            </ul>
+            </p>
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code>
 function getTotalX(a, b) {
-    // console.log("a:", a)
-    // console.log("b:", b)
     let rangeArr = [];
     let maxA = Math.max(...a);
     let counter = 0
@@ -395,41 +483,25 @@ function getTotalX(a, b) {
         let r = maxA * i;
         rangeArr.push(r);
         if (r === b[0]) {
-            // console.log("1st rangeArr:", rangeArr)
             { break }
         } 
     }
     
     for (let k = 0; k < rangeArr.length; k++) {
-        // console.log("2nd rangeArr:", rangeArr);
-        // console.log("b:", b);
-        
         for (let j = 0; j < b.length; j++){
-            // console.log("3rd b[j]", b[j])
-            // console.log("rangeArr[k]", rangeArr[k])
             let remainder = b[j] % rangeArr[k]
-            // console.log("remainder:", remainder)
             
             if (remainder !== 0) {
-                // console.log("NO");
-                // console.log("k:", k)
                 rangeArr.splice(k, 1, 0)
-                // console.log("if3rd-rangeArr:", rangeArr)
                 { break }
             } 
         } 
+
         for (let g = 0; g < a.length; g++){
-            // console.log("4th starting a loop remainders")
-            // console.log("rangeArr[k]", rangeArr[k]);
-            // console.log("a[g]", a[g]);
             let remainder = rangeArr[k] % a[g];
-            // console.log("remainder:", remainder);
             
             if (remainder !== 0) {
-                // console.log("NO");
-                // console.log("g:", g)
                 rangeArr.splice(k, 1, 0)
-                // console.log("if4th-rangeArr:", rangeArr)
                 { break }
             } 
         }
@@ -437,13 +509,17 @@ function getTotalX(a, b) {
     
     for (let t= 0; t < rangeArr.length; t++) {
             if (rangeArr[t] !== 0) {
-                // console.log("counter:", counter)
                 counter++;
             }
         } return counter;
 }
-    </code>
-</pre>
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
 
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
         <div class="row">
