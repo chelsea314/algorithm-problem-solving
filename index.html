@@ -21,20 +21,76 @@
 
 <!-- TEMPLATE -->
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- INLINE-MATH TEMPLATE -->
+<!-- <span class="inline-math"></span> -->
+<!-- ///////////////////////////// -->
+
 <!-- <div class="row">
     <h2 class="col-12 mt-2">Title</h2>
     <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
-    <h5 class="col-12">Date Solved: </h5>
+    <h5 class="col-12">Date Solved: , 2022</h5>
 </div>
-    
 
 <div class="row mt">
     <card class="card col-12 problem"> 
         <div class="card-body">
             <h5 class="card-title">Problem:</h5>
             <p>
+                
+            </p>
+            <h6>
+                Example
+            </h6>
+            <p>
+                
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                
+            </p>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>
+
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <p>
 
             </p>
+            <h6>
+                Sample Output
+            </h6>
+            <p>
+
+            </p>
+            <h6>
+                Explanation
+            </h6>
+            <p>
+
+            </p>            
         </div>
     </card>
 </div>
@@ -52,10 +108,6 @@
 </div> -->
 
 <!-- END ///////////////////////////////////////////////////////////// -->
-
-<!-- INLINE-MATH TEMPLATE -->
-<span class="inline-math"></span>
-<!-- ///////////////////////////// -->
 
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
 <div class="row">
@@ -244,35 +296,83 @@ function migratoryBirds(arr) {
             <p>
                 Given an array of integers and a positive integer <span class="inline-math">k</span> , determine the number of <span class="inline-math">(i, j)</span> pairs where <span class="inline-math">i < j</span> and <span class="inline-math">ar[i]</span> + <span class="inline-math">ar[j]</span> is divisible by <span class="inline-math">k</span>.
             </p>
-            <h6>Example</h6>
-            <p><span class="inline-math">ar = [1, 2, 3, 4, 5, 6]</span></p>
-            <p><span class="inline-math">k = 5</span></p>
-
-
-            <p>Three pairs meet the criteria: <span class="inline-math">[1, 4], [2, 3],</span> and <span class="inline-math">[4, 6]</span>.</p>
-
-Function Description
-
-Complete the divisibleSumPairs function in the editor below.
-
-divisibleSumPairs has the following parameter(s):
-
-int n: the length of array 
-int ar[n]: an array of integers
-int k: the integer divisor
-Returns
-- int: the number of pairs
-
-Input Format
-
-The first line contains  space-separated integers,  and .
-The second line contains  space-separated integers, each a value of .
-
-Constraints
-
-
-
+            <h6>
+                Example
+            </h6>
+            <p>
+                <span class="inline-math">ar = [1, 2, 3, 4, 5, 6]</span>
             </p>
+            <p>
+                <span class="inline-math">k = 5</span>
+            </p>
+            <p>
+                Three pairs meet the criteria: <span class="inline-math">[1, 4], [2, 3],</span> and <span class="inline-math">[4, 6]</span>.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the divisibleSumPairs function in the editor below.
+            </p>
+            <p>
+                divisibleSumPairs has the following parameter(s):
+            </p>
+            <ul>
+                <li>int n: the length of array <span class="inline-math">ar</span></li> 
+                <li>int ar[n]: an array of integers</li>
+                <li>int k: the integer divisor</li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>int: the number of pairs</li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line contains <span class="inline-math">2</span> space-separated integers, <span class="inline-math">n</span> and <span class="inline-math">k</span>.
+            </p>
+            <p>
+                The second line contains <span class="inline-math">n</span> space-separated integers, each a value of <span class="inline-math">arr[i]</span>.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li><span class="inline-math">2 <= n <= 100</span></li>
+                <li><span class="inline-math">1 <= k <= 100</span></li>
+                <li><span class="inline-math">1 <= ar[i] <= 100</span></li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <p>
+                <span class="inline-math">6 3</span>
+            </p>
+            <p>
+                <span class="inline-math">1 3 2 6 1 2</span>
+            </p>
+            <h6>
+                Sample Output
+            </h6>
+            <p>
+                <span class="inline-math">5</span>
+            </p>
+            <h6>
+                Explanation
+            </h6>
+            <p>
+                Here are the <span class="inline-math">5</span> valid pairs when <span class="inline-math">k=3</span>:
+            </p>
+            <ul>
+                <li><span class="inline-math">(0, 2) --> ar[0] + ar[2] = 1 + 2 = 3</span></li>
+                <li><span class="inline-math">(0, 5) --> ar[0] + ar[5] = 1 + 2 = 3</span></li>
+                <li><span class="inline-math">(1, 3) --> ar[1] + ar[3] = 3 + 6 = 9</span></li>
+                <li><span class="inline-math">(2, 4) --> ar[2] + ar[4] = 2 + 1 = 3</span></li>
+                <li><span class="inline-math">(4, 5) --> ar[4] + ar[5] = 1 + 2 = 3</span></li>
+            </ul>
         </div>
     </card>
 </div>
@@ -381,7 +481,224 @@ function birthday(s, d, m) {
 
 <!-- END ///////////////////////////////////////////////////////////// -->
 
-<!-- ///////////////////////////////////////////////////////////// -->
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+<div class="row">
+    <h2 class="col-12 mt-2">Breaking the Records</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 6, 2022</h5>
+</div>
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                Maria plays college basketball and wants to go pro. Each season she maintains a record of her play. She tabulates the number of times she breaks her season record for most points and least points in a game. Points scored in the first game establish her record for the season, and she begins counting from there.
+            </p>
+            <h6>
+                Example
+            </h6>
+            <p>
+                <span class="inline-math">scores = [12, 24, 10, 24]</span>
+            </p>
+            <p>
+                Scores are in the same order as the games played. She tabulates her results as follows:
+            </p>
+            <table>
+                <tr>
+                    <th>Game</th>
+                    <th>Score</th>
+                    <th>Minimum</th>
+                    <th>Maximum</th>
+                    <th>Count-Min</th>
+                    <th>Count-Max</th>
+                </tr>
+                <tr>
+                    <td>
+                    0     
+                    </td>
+                    <td>
+                    12
+                    </td>
+                    <td>
+                    12
+                    </td>
+                    <td>
+                    12
+                    </td>
+                    <td>
+                    0
+                    </td>
+                    <td>
+                    0
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    1     
+                    </td>
+                    <td>
+                    24
+                    </td>
+                    <td>
+                    12
+                    </td>
+                    <td>
+                    24
+                    </td>
+                    <td>
+                    0
+                    </td>
+                    <td>
+                    1
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    2     
+                    </td>
+                    <td>
+                    10
+                    </td>
+                    <td>
+                    10
+                    </td>
+                    <td>
+                    24
+                    </td>
+                    <td>
+                    1
+                    </td>
+                    <td>
+                    1
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    3     
+                    </td>
+                    <td>
+                    24
+                    </td>
+                    <td>
+                    10
+                    </td>
+                    <td>
+                    24
+                    </td>
+                    <td>
+                    1
+                    </td>
+                    <td>
+                    1
+                    </td>
+                </tr>
+            </table>
+            <p>
+                Given the scores for a season, determine the number of times Maria breaks her records for most and least points scored during the season.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the breakingRecords function in the editor below.
+            </p>
+            <p>
+                breakingRecords has the following parameter(s):
+            </p>
+            <ul>
+                <li>
+                    int scores[n]: points scored per game
+                </li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>
+                    int[2]: An array with the numbers of times she broke her records. Index <span class="inline-math">0</span> is for breaking most points records, and index <span class="inline-math">1</span> is for breaking least points records.
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line contains an integer <span class="inline-math">n</span>, the number of games.
+            </p>
+            <p>
+                The second line contains <span class="inline-math">n</span> space-separated integers describing the respective values of <span class="inline-math">score<sub>0</sub>, score<sub>1</sub>,...,score<sub>n-1</sub></span>.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">1 <= n <= 1000</span>
+                </li>
+                <li>
+                    <span class="inline-math">0 <= scores[i] <= 10<sup>8</sup></span>
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <p>
+                <span class="inline-math">9</span>
+            </p>
+            <p>
+                <span class="inline-math">10 5 20 20 4 5 2 25 1</span>
+            </p>
+            <h6>
+                Sample Output
+            </h6>
+            <p>
+                <span class="inline-math">2 4</span>
+            </p>
+            <h6>
+                Explanation
+            </h6>
+            <p>
+                The diagram below depicts the number of times Maria broke her best and worst records throughout the season:
+            </p>
+            <img src="./images/breakingrecords.png">
+            <p>
+                She broke her best record twice (after games <span class="inline-math">2</span> and <span class="inline-math">7</span> ) and her worst record four times (after games <span class="inline-math">1</span>, <span class="inline-math">4</span>, <span class="inline-math">6</span>, and <span class="inline-math">8</span>), so we print <span class="inline-math">2 4</span> as our answer. Note that she did not break her record for best score during game <span class="inline-math">3</span>, as her score during that game was not strictly greater than her best record at the time.
+            </p>            
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function breakingRecords(scores) {
+    let records = [scores[0], scores[0]];
+    let maxcount = 0;
+    let mincount = 0;
+    let countArr = [0, 0];
+
+    for (let i = 0; i < scores.length; i++) {
+        if (scores[i] > records[0]) {
+            records.splice(0, 1, scores[i]);
+            maxcount++;
+        } else if (scores[i] < records[1]) {
+            records.splice(1, 1, scores[i]);
+            mincount++;
+        }
+    }
+    countArr.splice(0, 1, maxcount);
+    countArr.splice(1, 1, mincount);
+    return countArr
+}
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
+
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
 <div class="row">
     <h2 class="col-12 mt-2">Between Two Sets</h2>
@@ -576,7 +893,9 @@ function miniMaxSum(arr) {
             </card>
         </div>
 
-<!-- ///////////////////////////////////////////////////////////// -->
+<!--END ///////////////////////////////////////////////////////////// -->
+
+<!--START ///////////////////////////////////////////////////////////// -->
 
         <div class="row">
             <h2 class="col-12 mt-2">The Staircase</h2>
@@ -620,7 +939,9 @@ function staircase(n) {
             </card>
         </div>
 
-<!-- ///////////////////////////////////////////////////////////// -->
+<!--END ///////////////////////////////////////////////////////////// -->
+
+<!--START ///////////////////////////////////////////////////////////// -->
 
         <div class="row">
             <h2 class="col-12 mt-2">Plus Minus</h2>

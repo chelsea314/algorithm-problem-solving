@@ -24,4 +24,7 @@ body {
     font-style: italic;
     font-size: 25px;
 }
-/* <span class="inline-math"></span> */
+
+table, th, td {
+    border: 1px solid black;
+  }
