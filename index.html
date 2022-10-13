@@ -21,10 +21,12 @@
 
 <!-- TEMPLATE -->
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
-<div class="row">
+<!-- <div class="row">
     <h2 class="col-12 mt-2">Title</h2>
     <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: </h5>
 </div>
+    
 
 <div class="row mt">
     <card class="card col-12 problem"> 
@@ -47,18 +49,106 @@
             </pre>       
         </div>
     </card>
-</div>
+</div> -->
 
 <!-- END ///////////////////////////////////////////////////////////// -->
+
 <!-- INLINE-MATH TEMPLATE -->
 <span class="inline-math"></span>
 <!-- ///////////////////////////// -->
 
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+<div class="row">
+    <h2 class="col-12 mt-2">Day of the Programmer</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 13, 2022</h5>
+</div>
+    
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                Marie invented a Time Machine and wants to test it by time-traveling to visit Russia on the Day of the Programmer (the 256th day of the year) during a year in the inclusive range from 1700 to 2700.</p>
+            <p>
+                From 1700 to 1917, Russia's official calendar was the Julian calendar; since 1919 they used the Gregorian calendar system. The transition from the Julian to Gregorian calendar system occurred in 1918, when the next day after January 31st was February 14th. This means that in 1918, February 14th was the 32nd day of the year in Russia.
+            </p>  
+            <p>  
+                In both calendar systems, February is the only month with a variable amount of days; it has 29 days during a leap year, and 28 days during all other years. In the Julian calendar, leap years are divisible by 4; in the Gregorian calendar, leap years are either of the following:
+            </p>
+            <ul> 
+                <li>Divisible by 400.</li>
+                <li>Divisible by 4 and not divisible by 100.</li>
+            </ul>
+            <p>
+                Given a year, <span class="inline-math">y</span>, find the date of the 256th day of that year according to the official Russian calendar during that year. Then print it in the format <span class="inline-math">dd.mm.yyyy</span>, where <span class="inline-math">dd</span> is the two-digit day, <span class="inline-math">mm</span> is the two-digit month, and <span class="inline-math">yyyy</span> is <span class="inline-math">y</span>.
+            </p> 
+            <p>
+                For example, the given <span class="inline-math">year</span> = 1984. 1984 is divisible by 4, so it is a leap year. The 256th day of a leap year after 1918 is September 12, so the answer is <span class="inline-math">12.09.1984</span>.
+            </p>
+            <h6>    
+                Function Description
+            </h6>
+            <p>    
+                Complete the dayOfProgrammer function in the editor below. It should return a string representing the date of the 256th day of the year given.
+            </p>
+            <p>    
+                dayOfProgrammer has the following parameter(s):
+            </p>
+            <ul>    
+                <li>year: an integer</li>
+            </ul>
+            <h6>    
+                Input Format
+            </h6>
+            <p>    
+                A single integer denoting year <span class="inline-math">y</span>.
+            </p>
+            <h6>    
+                Constraints
+            </h6>
+            <ul>
+                <li>1700 \le y \le 2700</li>
+            </ul>
+            <h6>
+                Output Format
+            </h6>    
+                Print the full date of Day of the Programmer during year <span class="inline-math">y</span> in the format <span class="inline-math">dd.mm.yyyy</span>, where <span class="inline-math">dd</span> is the two-digit day, <span class="inline-math">mm</span> is the two-digit month, and <span class="inline-math">yyyy</span> is <span class="inline-math">y</span>.
+            </p>
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function dayOfProgrammer(year) {
+    if ((year > 1918) && ((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0))) {
+        return ('12.09.' + year);
+    } else if ((year < 1918) && (year % 4 === 0)) {
+        return ('12.09.' + year);
+    } else if (year === 1918) {
+        return ('26.09.' + year);
+    } else {
+        return ('13.09.' + year);
+    }
+}
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
 
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
 <div class="row">
     <h2 class="col-12 mt-2">Migratory Birds</h2>
     <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 12, 2022</h5>
 </div>
 
 <div class="row mt">
@@ -66,31 +156,39 @@
         <div class="card-body">
             <h5 class="card-title">Problem:</h5>
             <p>
-                Given an array of bird sightings where every element represents a bird type id, determine the id of the most frequently sighted type. If more than 1 type has been spotted that maximum amount, return the smallest of their ids.
+                Given an array of bird sightings where every element represents a bird type id, determine the id of the most frequently sighted type. If more than 1 type has been spotted that maximum amount, return the smallest of their ids.</p>
 
-                Example
+                <h6>Example</h6>
+                <span class="inline-math">arr = [1, 1, 2, 2, 3]</span>
+
+                <p>There are two each of types <span class="inline-math">1</span>
+                and <span class="inline-math">2</span>, and one sighting of type <span class="inline-math">3</span>. Pick the lower of the two types seen twice: type <span class="inline-math">1</span>.</p>
                 
-                There are two each of types  and , and one sighting of type . Pick the lower of the two types seen twice: type .
+                <h6>Function Description</h6>
                 
-                Function Description
+                <p>Complete the migratoryBirds function in the editor below.</p>
                 
-                Complete the migratoryBirds function in the editor below.
+                <p>migratoryBirds has the following parameter(s):</p>
                 
-                migratoryBirds has the following parameter(s):
+                <ul>
+                    <li>int arr[n]: the types of birds sighted</li>
+                </ul>
+
+                <h6>Returns</h6>
                 
-                int arr[n]: the types of birds sighted
-                Returns
+                <ul>
+                    <li>int: the lowest type id of the most frequently sighted birds</li>
+                </ul>
                 
-                int: the lowest type id of the most frequently sighted birds
-                Input Format
+                <h6>Input Format</h6>
                 
-                The first line contains an integer, , the size of .
-                The second line describes  as  space-separated integers, each a type number of the bird sighted.
+                <p>The first line contains an integer, <span class="inline-math">n</span>, the size of <span class="inline-math">arr</span>.</p>
+                <p>The second line describes <span class="inline-math">arr</span>
+                as <span class="inline-math">n</span> space-separated integers, each a type number of the bird sighted.</p>
                 
-                Constraints
+                <h6>Constraints</h6>
                 
-                It is guaranteed that each type is , , , , or .
-            </p>
+                <p>It is guaranteed that each type is <span class="inline-math">1</span>, <span class="inline-math">2</span>, <span class="inline-math">3</span>, <span class="inline-math">4</span>, or <span class="inline-math">5</span>.</p>
         </div>
     </card>
 </div>
