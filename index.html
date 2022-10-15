@@ -128,6 +128,135 @@
 <!-- ///////////////////////////// -->
 
 <div class="row">
+    <h2 class="col-12 mt-2">Sales by Match</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 15, 2022</h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                There is a large pile of socks that must be paired by color. Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.
+            </p>
+            <h6>
+                Example
+            </h6>
+            <p>
+                <span class="inline-math">n = 7</span>
+                <br>
+                <span class="inline-math">ar = [1, 2, 1, 2, 1, 3, 2]</span>
+                <br>
+                There is one pair of color <span class="inline-math">1</span> and one of color <span class="inline-math">2</span>. There are three odd socks left, one of each color. The number of pairs is <span class="inline-math">2</span>.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the sockMerchant function in the editor below.
+            </p>
+            <p>
+                sockMerchant has the following parameter(s):
+            </p>
+            <ul>
+                <li>
+                    int n: the number of socks in the pile
+                </li>
+                <li>
+                    int ar[n]: the colors of each sock
+                </li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>
+                    int: the number of pairs
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line contains an integer <span class="inline-math">n</span>, the number of socks represented in <span class="inline-math">ar</span>.
+                <br>
+                The second line contains <span class="inline-math">n</span> space-separated integers, <span class="inline-math">ar[i]</span>, the colors of the socks in the pile.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">1 <= n <= 100</span>
+                </li>
+                <li>
+                    <span class="inline-math">1 <= ar[i] <= 100</span> where <span class="inline-math">0 <= i < n</span>
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <pre>
+                <code>
+STDIN                       Function
+-----                       --------
+9                           n = 9
+10 20 20 10 10 30 50 10 20  ar = [10, 20, 20, 10, 10, 30, 50, 10, 20]
+                </code>
+            </pre>
+            <h6>
+                Sample Output
+            </h6>
+            <pre>
+                <code>
+3
+                </code>
+            </pre>
+            <h6>
+                Explanation
+            </h6>
+            <img alt="pairs" class="col-12" src="./images/pairs.png" >
+            <p>
+                There are three pairs of socks.
+            </p>            
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function sockMerchant(n, ar) {
+    let pairs = 0;
+    
+    for (let i = 0; i < ar.length; i++) {
+        for (let j = i + 1; j < ar.length; j++){
+            if (ar[i] === ar[j]) {
+                pairs++;
+                ar.splice(i, 1, "");
+                ar.splice(j, 1);
+            }
+        } 
+    } return pairs
+}
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
+
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- INLINE-MATH TEMPLATE -->
+<span class="inline-math"></span>
+<!-- ///////////////////////////// -->
+
+<div class="row">
     <h2 class="col-12 mt-2">Bill Division</h2>
     <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
     <h5 class="col-12">Date Solved: Oct 14, 2022</h5>
@@ -1711,8 +1840,9 @@ function birthdayCakeCandles(candles) {
 
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
         <div class="row">
-            <h2 class="col-12 mt-2">Mini Max</h2>
+            <h2 class="col-12 mt-2">Mini-Max Sum</h2>
             <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+            <h5 class="col-12">Date Solved: Oct. 1, 2022</h5>
         </div>
 
         <div class="row mt">
@@ -1771,6 +1901,7 @@ function miniMaxSum(arr) {
         <div class="row">
             <h2 class="col-12 mt-2">The Staircase</h2>
             <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+            <h5 class="col-12">Date Solved: Sept. 29, 2022</h5>
         </div>
 
         <div class="row mt">
@@ -1814,90 +1945,347 @@ function staircase(n) {
 
 <!--START ///////////////////////////////////////////////////////////// -->
 
-        <div class="row">
-            <h2 class="col-12 mt-2">Plus Minus</h2>
-            <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
-        </div>
+<div class="row">
+    <h2 class="col-12 mt-2">Plus Minus</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Sept. 27, 2022</h5>
+</div>
 
-        <div class="row mt">
-            <card class="card col-12 problem"> 
-                <div class="card-body">
-                    <h5 class="card-title">Problem:</h5>
-                    <p>Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with <span class="inline-math">6</span> places after the decimal.</p>
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with <span class="inline-math">6</span> places after the decimal.</p>
 
-                    <p>Print the ratios of positive, negative and zero values in the array. Each value should be printed on a separate line with <span class="inline-math">6</span> digits after the decimal. The function should not return a value.</p>
+            <p>Print the ratios of positive, negative and zero values in the array. Each value should be printed on a separate line with <span class="inline-math">6</span> digits after the decimal. The function should not return a value.</p>
 
-                    <h6>Input Format</h6>
+            <h6>Input Format</h6>
 
-                    <p>The first line contains an integer, <span class="inline-math">n</span>, the size of the array.</p>
-                    <p>The second line contains <span class="inline-math">n</span> space-separated integers that describe <span class="inline-math">arr[n]</span>.</p>
+            <p>The first line contains an integer, <span class="inline-math">n</span>, the size of the array.</p>
+            <p>The second line contains <span class="inline-math">n</span> space-separated integers that describe <span class="inline-math">arr[n]</span>.</p>
 
-                    <h6>Sample Input</h6>
-                    <pre>
-                        <code class="col-6">
+            <h6>Sample Input</h6>
+            <pre>
+                <code class="col-6">
 STDIN           Function
 -----           --------
 6               arr[] size n = 6
 -4 3 -9 0 4 1   arr = [-4, 3, -9, 0, 4, 1]
-                        </code>
-                    </pre> 
+                </code>
+            </pre> 
 
-                    <h6>Sample Output</h6>
-                    <pre>
-                        <code class="col-6">
+            <h6>Sample Output</h6>
+            <pre>
+                <code class="col-6">
 0.500000
 0.333333
 0.166667
-                        </code>
-                    </pre> 
+                </code>
+            </pre> 
 
-                    <h6>Explanation</h6>
-                    <p>There are <span class="inline-math">3</span> positive numbers, <span class="inline-math">2</span> negative numbers, and <span class="inline-math">1</span> zero in the array.
-                        The proportions of occurrence are: 
-                        <p>positive: <span class="inline-math">(3/6) = 0.500000</span>,</p>
-                        <p>negative: <span class="inline-math">(2/6) = 0.333333</span></p> 
-                        <p>zeros: <span class="inline-math">(1/6) = 0.166667</span>.</p>
-                </div>
-            </card>
+            <h6>Explanation</h6>
+            <p>There are <span class="inline-math">3</span> positive numbers, <span class="inline-math">2</span> negative numbers, and <span class="inline-math">1</span> zero in the array.
+                The proportions of occurrence are: 
+                <p>positive: <span class="inline-math">(3/6) = 0.500000</span>,</p>
+                <p>negative: <span class="inline-math">(2/6) = 0.333333</span></p> 
+                <p>zeros: <span class="inline-math">(1/6) = 0.166667</span>.</p>
         </div>
+    </card>
+</div>
 
-        <div class="row">
-            <card class="card col-12 solution mt-2"> 
-                <div class="card-body">
-                    <h5 class="card-title">My Solution:</h5>
-                    <pre>
-                        <code class="col-6">                
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">                
 function plusMinus(arr) {
-    let positive = 0;
-    let negative = 0;
-    let zero = 0;
-    let n = arr.length;
-    
-    for (let i = 0; i < n; i++){
-        if (arr[i] < 0) {
-            negative ++;
-        } else if (arr[i] > 0) {
-            positive ++;
-        } else if (arr[i] === 0) { 
-            zero ++;
-        } 
-    }; 
+let positive = 0;
+let negative = 0;
+let zero = 0;
+let n = arr.length;
 
-    console.log((positive/n).toFixed(6));
-    console.log((negative/n).toFixed(6));
-    console.log((zero/n).toFixed(6));
+for (let i = 0; i < n; i++){
+if (arr[i] < 0) {
+    negative ++;
+} else if (arr[i] > 0) {
+    positive ++;
+} else if (arr[i] === 0) { 
+    zero ++;
+} 
+}; 
+
+console.log((positive/n).toFixed(6));
+console.log((negative/n).toFixed(6));
+console.log((zero/n).toFixed(6));
 };
-                        </code>
-                    </pre>        
-                </div>
-            </card>
+                </code>
+            </pre>        
         </div>
+    </card>
+</div>
 
 <!-- ///////////////////////////////////////////////////////////// -->
+
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- INLINE-MATH TEMPLATE -->
+<span class="inline-math"></span>
+<!-- ///////////////////////////// -->
+
+<div class="row">
+    <h2 class="col-12 mt-2">Diagonal Difference</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Sept. 23, 2022</h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+                <br>
+                For example, the square matrix <span class="inline-math">arr</span> is shown below:
+            </p>
+            <pre>
+                <code>
+1 2 3
+4 5 6
+9 8 9     
+                </code>
+            </pre>
+            <p>
+                The left-to-right diagonal = <span class="inline-math">1 + 5 + 9 = 15</span>. The right to left diagonal = <span class="inline-math">3 + 5 + 9 = 17</span>. Their absolute difference is <span class="inline-math">|15 - 17| = 2</span>.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the diagonalDifference function in the editor below.
+            </p>
+            <p>
+                diagonalDifference takes the following parameter:
+            </p>
+            <ul>
+                <li>
+                    int arr[n][m]: an array of integers
+                </li>
+            </ul>
+            <h6>
+                Return
+            </h6>
+            <ul>
+                <li>
+                    int: the absolute diagonal difference
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line contains a single integer, <span class="inline-math">n</span>, the number of rows and columns in the square matrix <span class="inline-math">arr</span>.
+                <br>
+                Each of the next <span class="inline-math">n</span> lines describes a row, <span class="inline-math">arr[i]</span>, and consists of <span class="inline-math">n</span> space-separated integers <span class="inline-math">arr[i][j]</span>.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">-100 <= arr[i][j] <= 100</span>
+                </li>
+            </ul>
+            <h6>
+                Output Format
+            </h6>
+            <p>
+                Return the absolute difference between the sums of the matrix's two diagonals as a single integer.
+            </p>
+            <h6>
+                Sample Input
+            </h6>
+            <pre>
+                <code>
+3
+11 2 4
+4 5 6
+10 8 -12
+                </code>
+            </pre>
+            <h6>
+                Sample Output
+            </h6>
+            <pre>
+                <code>
+15
+                </code>
+            </pre>
+            <h6>
+                Explanation
+            </h6>
+            <p>
+                The primary diagonal is:
+            </p>            
+            <pre>
+                <code>
+11
+   5
+     -12
+                </code>
+            </pre>
+            <p>
+                Sum across the primary diagonal: 11 + 5 - 12 = 4  
+                <br>
+                The secondary diagonal is:
+            </p>
+            <pre>
+                <code>
+        4        
+    5
+10
+                </code>
+            </pre>
+            <p>
+                Sum across the secondary diagonal: 4 + 5 + 10 = 19
+                <br>
+                Difference: |4 - 19| = 15
+                <br>
+                Note: |x| is the absolute value of x
+            </p>
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function diagonalDifference(arr) {
+    let pDiag = 0;
+    let sDiag = 0;        
+    for (let i = 0; i < arr.length; i++){
+        pDiag += arr[i][i];
+        let arrReversed = arr[i].reverse();
+        sDiag += arrReversed[i]
+    } return Math.abs(pDiag - sDiag);
+} 
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
+
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+<div class="row">
+    <h2 class="col-12 mt-2">A Very Big Sum</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Sept. 23, 2022</h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                In this challenge, you are required to calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the aVeryBigSum function in the editor below. It must return the sum of all array elements.
+            </p>
+            <p>
+                aVeryBigSum has the following parameter(s):
+            </p>
+            <ul>
+                <li>
+                    int ar[n]: an array of integers .
+                </li>
+            </ul>
+            <h6>
+                Return
+            </h6>
+            <ul>
+                <li>
+                    long: the sum of all array elements
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line of the input consists of an integer <span class="inline-math">n</span>.
+                <br>
+                The next line contains <span class="inline-math">n</span> space-separated integers contained in the array.
+            </p>
+            <h6>
+                Output Format
+            </h6>
+            <p>
+                Return the integer sum of the elements in the array.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">1 <= n <= 10</span>
+                </li>
+                <li>
+                    <span class="inline-math">0 <= ar[i] <= 10<sup>10</sup></span>
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <pre>
+                <code>
+5
+1000000001 1000000002 1000000003 1000000004 1000000005
+                </code>
+            </pre>
+            <h6>
+                Sample Output
+            </h6>
+            <pre>
+                <code>
+5000000015
+                </code>
+            </pre>        
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function aVeryBigSum(ar) {
+    let total = 0;
+    for (let i=0; i < ar.length; i++){
+        total += ar[i]
+    } return total;
+}
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
+
+<!-- ////////////////////////////////////////////////// -->
 
 <div class="row">
     <h2 class="col-12 mt-2">Compare the Triplets</h2>
     <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Sept. 23, 2022</h5>
 </div>
 
 <div class="row mt">
