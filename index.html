@@ -128,6 +128,152 @@
 <!-- ///////////////////////////// -->
 
 <div class="row">
+    <h2 class="col-12 mt-2">Drawing Book</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 17, 2022</h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                A teacher asks the class to open their books to a page number. A student can either start turning pages from the front of the book or from the back of the book. They always turn pages one at a time. When they open the book, page <span class="inline-math">1</span> is always on the right side:
+            </p>
+            <img alt="page 1" src="./images/drawingbook1.png" class="col-12 col-md-2">
+            <br>
+            <p>
+                When they flip page <span class="inline-math">1</span>, they see pages <span class="inline-math">2</span> and <span class="inline-math">3</span>. Each page except the last page will always be printed on both sides. The last page may only be printed on the front, given the length of the book. If the book is <span class="inline-math">n</span> pages long, and a student wants to turn to page <span class="inline-math">p</span>, what is the minimum number of pages to turn? They can start at the beginning or the end of the book.
+                <br>
+                Given <span class="inline-math">n</span> and <span class="inline-math">p</span>, find and print the minimum number of pages that must be turned in order to arrive at page <span class="inline-math">p</span>.
+            </p>
+            <h6>
+                Example
+            </h6>
+            <p>
+                <span class="inline-math">n = 5</span>
+                <br>
+                <span class="inline-math">p = 3</span>
+            </p>
+            <img src="./images/drawingbook2.png" alt="drawingbook 2" class="col-12 col-md-6">
+            <p>
+                Using the diagram above, if the student wants to get to page <span class="inline-math">3</span>, they open the book to page <span class="inline-math">1</span>, flip <span class="inline-math">1</span> page and they are on the correct page. If they open the book to the last page, page <span class="inline-math">5</span>, they turn <span class="inline-math">1</span> page and are at the correct page. Return <span class="inline-math">1</span>.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the pageCount function in the editor below.
+            </p>
+            <p>
+                pageCount has the following parameter(s):
+            </p>
+            <ul>
+                <li>
+                    int n: the number of pages in the book
+                </li>
+                <li>
+                    int p: the page number to turn to
+                </li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>
+                    int: the minimum number of pages to turn
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line contains an integer <span class="inline-math">n</span>, the number of pages in the book.
+                <br>
+                The second line contains an integer, <span class="inline-math">p</span>, the page to turn to.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">1 <= n <= 10<sup>5</sup></span>
+                </li>
+                <li>
+                    <span class="inline-math">1 <= p <= n</span>
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <pre>
+                <code>
+6
+2
+                </code>
+            </pre>
+            <h6>
+                Sample Output
+            </h6>
+            <pre>
+                <code>
+1
+                </code>
+            </pre>
+            <h6>
+                Explanation
+            </h6>
+            <p>
+                If the student starts turning from page <span class="inline-math">1</span>
+                , they only need to turn <span class="inline-math">1</span> page:
+            </p>
+            <img alt="drawingbook 3" class="col-12 col-md-4" src="./images/drawingbook3.png">
+            <p>
+                If a student starts turning from page <span class="inline-math">6</span>, they need to turn <span class="inline-math">2</span> pages:
+            </p>
+            <img alt="drawingbook 4" class="col-12 col-md-6" src="./images/drawingbook4.png">
+            <p>
+                Return the minimum value, <span class="inline-math">1</span>.
+            </p>
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function pageCount(n, p) {
+
+    let fromFront = Math.floor(p/2);
+    let fromBack = 0;
+    
+    if ((n%2 === 0) && (p%2 !== 0)) {
+        fromBack = Math.ceil((n - p) / 2)
+    } else {
+        fromBack = Math.floor((n - p) / 2)
+    }
+    
+    if (fromFront <= fromBack) {
+        return fromFront
+    }   return fromBack
+}
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div> -->
+
+<!-- END /////////////////////////////////////////////////////////////
+
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- INLINE-MATH TEMPLATE -->
+<span class="inline-math"></span>
+<!-- ///////////////////////////// -->
+
+<div class="row">
     <h2 class="col-12 mt-2">Sales by Match</h2>
     <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
     <h5 class="col-12">Date Solved: Oct. 15, 2022</h5>
