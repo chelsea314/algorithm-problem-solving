@@ -128,6 +128,155 @@
 <!-- ///////////////////////////// -->
 
 <div class="row">
+    <h2 class="col-12 mt-2">Title</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 18, 2022</h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                An avid hiker keeps meticulous records of their hikes. During the last hike that took exactly <span class="inline-math">steps</span> steps, for every step it was noted if it was an uphill, <span class="inline-math">U</span>, or a downhill, <span class="inline-math">D</span> step. Hikes always start and end at sea level, and each step up or down represents a <span class="inline-math">1</span> unit change in altitude. We define the following terms:
+            </p>
+            <ul>
+                <li>
+                    A mountain is a sequence of consecutive steps above sea level, starting with a step up from sea level and ending with a step down to sea level.
+                </li>
+                <li>
+                    A valley is a sequence of consecutive steps below sea level, starting with a step down from sea level and ending with a step up to sea level.
+                </li>
+            </ul>
+            <p>
+                Given the sequence of up and down steps during a hike, find and print the number of valleys walked through.
+            </p>
+            <h6>
+                Example
+            </h6>
+            <p>
+                <span class="inline-math">steps = 8 path = [DDUUUUDD]</span>
+                <br>
+                The hiker first enters a valley <span class="inline-math">2</span> units deep. Then they climb out and up onto a mountain <span class="inline-math">2</span> units high. Finally, the hiker returns to sea level and ends the hike.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the countingValleys function in the editor below.
+            </p>
+            <p>
+                countingValleys has the following parameter(s):
+            </p>
+            <ul>
+                <li>
+                    int steps: the number of steps on the hike
+                </li>
+                <li>
+                    string path: a string describing the path
+                </li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>
+                    int: the number of valleys traversed
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line contains an integer <span class="inline-math">steps</span>, the number of steps in the hike.
+                <br>
+                The second line contains a single string <span class="inline-math">path</span>, of <span class="inline-math">steps</span> characters that describe the path.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">2 <= steps <= 10<sup>6</sup></span>
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <pre>
+                <code>
+8
+UDDDUDUU
+                </code>
+            </pre>
+            <h6>
+                Sample Output
+            </h6>
+            <pre>
+                <code>
+1
+                </code>
+            </pre>
+            <h6>
+                Explanation
+            </h6>
+            <p>
+                If we represent _ as sea level, a step up as /, and a step down as \, the hike can be drawn as:
+            </p>   
+            <pre>
+                <code>
+ _/\       _
+    \    /
+     \/\/
+                </code>
+            </pre> 
+            <p>
+                The hiker enters and leaves one valley.
+            </p>        
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function countingValleys(steps, path) {
+    let seaLevel = 0;
+    let valleys = 0;
+    
+    let arPath = path.split("")
+    
+    for (let i = 0; i < arPath.length; i++) {
+        if (arPath[i] === "D" ) {
+            seaLevel--;
+            arPath.splice(i, 1, seaLevel);
+        } else {
+            seaLevel++;
+            arPath.splice(i, 1, seaLevel);
+        } 
+        
+        if (arPath[i] === 0 && arPath[i-1] === -1) {
+                valleys++
+            }
+    } return valleys
+}
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
+
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- INLINE-MATH TEMPLATE -->
+<span class="inline-math"></span>
+<!-- ///////////////////////////// -->
+
+<div class="row">
     <h2 class="col-12 mt-2">Drawing Book</h2>
     <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
     <h5 class="col-12">Date Solved: Oct. 17, 2022</h5>
@@ -263,9 +412,9 @@ function pageCount(n, p) {
             </pre>       
         </div>
     </card>
-</div> -->
+</div>
 
-<!-- END /////////////////////////////////////////////////////////////
+<!-- END ///////////////////////////////////////////////////////////// -->
 
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
 
