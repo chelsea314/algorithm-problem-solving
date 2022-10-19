@@ -41,6 +41,7 @@ For the time being, this site was built using HTML & CSS, but as I continue to g
 <td align="center"><a href="https://github.com/chelsea314"><img src="https://avatars.githubusercontent.com/u/1285062?v=4" width="100px;" alt=""/><br /><sub><b>Chelsea Sexton</b></sub></a></td>
 <td align="center"><a href="https://github.com/missatrox44"><img src="https://avatars.githubusercontent.com/u/74509058?v=4" width="100px;" alt=""/><br /><sub><b>Sara Baqla</b></sub></a></td>
 <td align="center"><a href="https://github.com/ZSerrano"><img src="https://avatars.githubusercontent.com/u/65681875?v=4" width="100px;" alt=""/><br /><sub><b>Zach Serrano</b></sub></a></td>
+<td align="center"><a href="https://github.com/andcooke"><img src="https://avatars.githubusercontent.com/u/105688564?v=4" width="100px;" alt=""/><br /><sub><b>Andrew Cooke</b></sub></a></td>>
 </tr>
 </table>
 
