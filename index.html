@@ -128,6 +128,261 @@
 <!-- ///////////////////////////// -->
 
 <div class="row">
+    <h2 class="col-12 mt-2">Picking Numbers</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 25, 2022</h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                Given an array of integers, find the longest subarray where the absolute difference between any two elements is less than or equal to <span class="inline-math">1</span>.
+            </p>
+            <h6>
+                Example
+            </h6>
+            <p>
+                <span class="inline-math">a = [1, 1, 2, 2, 4, 4, 5, 5, 5]</span>
+                <br>
+                There are two subarrays meeting the criterion: <span class="inline-math">[1, 1, 2, 2]</span> and <span class="inline-math">[4, 4, 5, 5, 5]</span>. The maximum length subarray has <span class="inline-math">5</span> elements.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the pickingNumbers function in the editor below.
+            </p>
+            <p>
+                pickingNumbers has the following parameter(s):
+            </p>
+            <ul>
+                <li>
+                    int a[n]: an array of integers
+                </li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>
+                    int: the length of the longest subarray that meets the criterion
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line contains a single integer <span class="inline-math">n</span>, the size of the array <span class="inline-math">a</span>.
+                <br>
+                The second line contains <span class="inline-math">n</span> space-separated integers, each an <span class="inline-math">a[i]</span>.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">2 <= n <= 100</span>
+                </li>
+                <li>
+                    <span class="inline-math">0 <= a[i] < 100</span>
+                </li>
+                <li>
+                    The answer will be <span class="inline-math">>= 2</span>.
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <pre>
+                <code>
+6
+4 6 5 3 3 1
+                </code>
+            </pre>
+            <h6>
+                Sample Output
+            </h6>
+            <pre>
+                <code>
+3
+                </code>
+            </pre>
+            <h6>
+                Explanation
+            </h6>
+            <p>
+                We choose the following multiset of integers from the array: <span class="inline-math">{4, 3, 3}</span>. Each pair in the multiset has an absolute difference <span class="inline-math"><= 1</span> (i.e., <span class="inline-math">|4 - 3|</span> and <span class="inline-math">|3 - 3| = 0</span>), so we print the number of chosen integers, <span class="inline-math">3</span>, as our answer.
+            </p>            
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function pickingNumbers(a) {
+    a.sort();
+    a.push(100);
+    let subArrays = [];
+
+    for (let i = 0; i < a.length; i++) {
+        for (let j = i + 1; j < a.length; j++) {
+            if (Math.abs(a[i] - a[j]) > 1) {
+                let sub = a.slice(i, j);
+                subArrays.push(sub);
+                { break };
+            }
+        }
+    } return Math.max(...subArrays.map(el => el.length));
+}
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
+
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- INLINE-MATH TEMPLATE -->
+<span class="inline-math"></span>
+<!-- ///////////////////////////// -->
+
+<div class="row">
+    <h2 class="col-12 mt-2">Forming a Magic Square</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Oct. 21, 2022</h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                We define a magic square to be an <span class="inline-math">n x n</span> matrix of distinct positive integers from <span class="inline-math">1</span> to <span class="inline-math">n<sup>2</sup></span> where the sum of any row, column, or diagonal of length <span class="inline-math">n</span> is always equal to the same number: the magic constant.
+                <br>
+                You will be given a  matrix <span class="inline-math">3 x 3</span> of integers in the inclusive range <span class="inline-math">[1, 9]</span>. We can convert any digit <span class="inline-math">a</span> to any other digit <span class="inline-math">b</span> in the range <span class="inline-math">[1, 9]</span> at cost of <span class="inline-math">|a - b|</span>. Given <span class="inline-math">s</span>, convert it into a magic square at minimal cost. Print this cost on a new line.
+                <br>
+                Note: The resulting magic square must contain distinct integers in the inclusive range <span class="inline-math">[1, 9]</span>.
+            </p>
+            <h6>
+                Example
+            </h6>
+            <p>
+                <span class="inline-math">$s = [[5, 3, 4], [1, 5, 8], [6, 4, 2]]</span>
+                <br>
+                The matrix looks like this:
+            </p>
+            <pre>
+                <code>
+5 3 4
+1 5 8
+6 4 2
+                </code>
+            </pre>
+            <p>
+                We can convert it to the following magic square:
+            </p>
+            <pre>
+                <code>
+8 3 4
+1 5 9
+6 7 2
+                </code>
+            </pre>
+            <p>
+                This took three replacements at a cost of <span class="inline-math">|5 - 8| + |8 - 9| + |4 -7| = 7</span>.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the formingMagicSquare function in the editor below.
+            </p>
+            <p>
+                formingMagicSquare has the following parameter(s):
+            </p>
+            <ul>
+                <li>
+                    int s[3][3]: a <span class="inline-math">3 x 3</span> array of integers
+                </li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>
+                    int: the minimal total cost of converting the input square to a magic square
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                Each of the <span class="inline-math">3</span> lines contains three space-separated integers of row <span class="inline-math">s[i]</span>.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">s[i][j] ∈ [1, 9]</span>
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <pre>
+                <code>
+4 9 2
+3 5 7
+8 1 5
+                </code>
+            </pre>
+            <h6>
+                Sample Output
+            </h6>
+            <pre>
+                <code>
+1
+                </code>
+            </pre>
+            <h6>
+                Explanation
+            </h6>
+            <p>
+                If we change the bottom right value, <span class="inline-math">s[2][2]</span>, from <span class="inline-math">5</span> to <span class="inline-math">6</span> at a cost of <span class="inline-math">|6 - 5| = 1</span>, <span class="inline-math">s</span> becomes a magic square at the minimum possible cost.
+            </p>            
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
+
+<!-- START /////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- INLINE-MATH TEMPLATE -->
+<span class="inline-math"></span>
+<!-- ///////////////////////////// -->
+
+<div class="row">
     <h2 class="col-12 mt-2">Cats and a Mouse</h2>
     <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
     <h5 class="col-12">Date Solved: Oct. 20, 2022</h5>
