@@ -121,6 +121,168 @@
 
 <!-- END ///////////////////////////////////////////////////////////// -->
 
+<!-- START /////////////////////////////////////////////////////////////////////////////// --> 
+
+<!-- INLINE-MATH TEMPLATE -->
+<span class="inline-math"></span>
+<!-- ///////////////////////////// -->
+
+<div class="row">
+    <h2 class="col-12 mt-2">Cut the Sticks</h2>
+    <h5 class="col-12">Source: <a href="https://www.hackerrank.com/">HackerRank</a></h5>
+    <h5 class="col-12">Date Solved: Dec. 1, 2022</h5>
+</div>
+
+<div class="row mt">
+    <card class="card col-12 problem"> 
+        <div class="card-body">
+            <h5 class="card-title">Problem:</h5>
+            <p>
+                You are given a number of sticks of varying lengths. You will iteratively cut the sticks into smaller sticks, discarding the shortest pieces until there are none left. At each iteration you will determine the length of the shortest stick remaining, cut that length from each of the longer sticks and then discard all the pieces of that shortest length. When all the remaining sticks are the same length, they cannot be shortened so discard them.
+                <br>
+                Given the lengths of <span class="inline-math">n</span> sticks, print the number of sticks that are left before each iteration until there are none left.
+            </p>
+            <h6>
+                Example
+            </h6>
+            <p>
+                <span class="inline-math">arr = [1, 2, 3]</span>
+                <br>
+                The shortest stick length is <span class="inline-math">1</span>, so cut that length from the longer two and discard the pieces of length <span class="inline-math">1</span>. Now the lengths are <span class="inline-math">arr = [1, 2]</span>. Again, the shortest stick is of length <span class="inline-math">1</span>, so cut that amount from the longer stick and discard those pieces. There is only one stick left, <span class="inline-math">arr = [1]</span>, so discard that stick. The number of sticks at each iteration are <span class="inline-math">answer = [3, 2, 1]</span>.
+            </p>
+            <h6>
+                Function Description
+            </h6>
+            <p>
+                Complete the cutTheSticks function in the editor below. It should return an array of integers representing the number of sticks before each cut operation is performed.
+            </p>
+            <p>
+                cutTheSticks has the following parameter(s):
+            </p>
+            <ul>
+                <li>
+                    int arr[n]: the lengths of each stick
+                </li>
+            </ul>
+            <h6>
+                Returns
+            </h6>
+            <ul>
+                <li>
+                    int[]: the number of sticks after each iteration
+                </li>
+            </ul>
+            <h6>
+                Input Format
+            </h6>
+            <p>
+                The first line contains a single integer <span class="inline-math">n</span>, the size of <span class="inline-math">arr</span>.
+                <br>
+                The next line contains <span class="inline-math">n</span> space-separated integers, each an <span class="inline-math">arr[i]</span>, where each value represents the length of the <span class="inline-math">i<sup>th</sup></span> stick.
+            </p>
+            <h6>
+                Constraints
+            </h6>
+            <ul>
+                <li>
+                    <span class="inline-math">1 <= n <= 1000</span>
+                </li>
+                <li>
+                    <span class="inline-math">1 <= arr[i] <= 1000</span>
+                </li>
+            </ul>
+            <h6>
+                Sample Input
+            </h6>
+            <pre>
+                <code>
+STDIN           Function
+-----           --------
+6               arr[] size n = 6
+5 4 4 2 2 8     arr = [5, 4, 4, 2, 2, 8]
+                </code>
+            </pre>
+            <h6>
+                Sample Output
+            </h6>
+            <pre>
+                <code>
+6
+4
+2
+1
+                </code>
+            </pre>
+            <h6>
+                Explanation
+            </h6>
+            <pre>
+                <code>
+sticks-length        length-of-cut   sticks-cut
+5 4 4 2 2 8             2               6
+3 2 2 _ _ 6             2               4
+1 _ _ _ _ 4             1               2
+_ _ _ _ _ 3             3               1
+_ _ _ _ _ _           DONE            DONE
+                </code>
+            </pre>            
+        </div>
+    </card>
+</div>
+<div class="row">
+    <card class="card col-12 solution mt-2"> 
+        <div class="card-body">
+            <h5 class="card-title">My Solution:</h5>
+            <pre>
+                <code class="col-6">
+function cutTheSticks(arr) {
+    // Define empty array for holding the values the number of sticks that are left before each iteration until there are none left.
+    let sticksCut = [];
+
+    // Sort array least to greatest
+    arr.sort(function(a, b) {
+        return a - b;
+        });
+    
+    for (let j = 0; j < arr.length; j++) {
+        // Set sticks count to 0
+        let sticks = 0;
+    
+        // Find the minimum value in the array; assign it to variable
+        let minLength = arr.find(element => element > 0)
+        
+        // If no element is greater than 0; return the array
+        if (minLength === undefined) {
+            return sticksCut
+        }
+    
+        for (let i = 0; i < arr.length; i++) {
+            
+            // Subtract minLength from index
+            let newStickLength = arr[i] - minLength;
+            
+            // Remove value and replace with new stick length
+            arr.splice(i, 1, newStickLength);
+            
+            // Count how many values are greater than 0 in the array 
+            if (newStickLength >= 0) {
+                sticks++;
+            } 
+    }
+    
+    // Push Count 
+    sticksCut.push(sticks);
+
+    }   return sticksCut;
+}
+                </code>
+            </pre>       
+        </div>
+    </card>
+</div>
+
+<!-- END ///////////////////////////////////////////////////////////// -->
+
 <!-- START /////////////////////////////////////////////////////////////////////////////// -->
 
 <!-- INLINE-MATH TEMPLATE -->
